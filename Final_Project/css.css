@@ -1,0 +1,385 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ font-family: "Faculty Glyphic", sans-serif;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f3ff;
+  color: #3b2f2f;
+  min-height: 100vh;
+}
+
+/* Header */
+
+header {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #7c3aed;
+}
+
+.logo {
+font-family: "DynaPuff", cursive;
+  font-size: 2.7rem;
+  color: #f2ebfa;
+  margin-bottom: 10px;
+  transition: transform 0.25s ease;
+
+}
+
+.logo:hover {
+  transform: scale(1.08);
+}
+
+.subtext {
+  color: #d6a0f5;
+  font-size: 1.1rem;
+}
+
+/* Main Layout */
+
+.app-layout {
+  width: 90%;
+  max-width: 1150px;
+  margin: 35px auto;
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* General Cards */
+
+section,
+.past-journal-sidebar {
+  background-color: #e8dcf9;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 14px rgba(120, 53, 15, 0.18);
+}
+
+section {
+  margin-bottom: 25px;
+}
+
+h1,
+h2,
+h3 {
+  color: #9a3412;
+}
+
+.journal h2,
+.past-journal-sidebar h2 {
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+/* Past Journal Sidebar */
+
+.past-journal-sidebar {
+  width: 290px;
+  position: sticky;
+  top: 20px;
+}
+
+.past-journal-sidebar h2 {
+  text-align: center;
+  color: #c2410c;
+}
+
+.placeholder-card {
+  background-color: #fff1d6;
+  border: 2px dashed #f59e0b;
+  border-radius: 15px;
+  padding: 18px;
+  text-align: center;
+  color: #7c4a1e;
+}
+
+.placeholder-card p:first-child {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.past-journal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.journal-history-card {
+  background-color: #fff7ed;
+  padding: 15px;
+  border-left: 6px solid #f97316;
+  border-radius: 12px;
+}
+
+.history-toggle-btn {
+  display: none;
+}
+
+
+.journal-date {
+  font-size: 0.9rem;
+  color: #9b6b3d;
+  margin: 6px 0;
+}
+
+/* Hover Effect */
+section,
+.past-journal-sidebar,
+.placeholder-card,
+.journal-history-card,
+.music-card,
+.recommend-music,
+.music-search {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+section:hover,
+.past-journal-sidebar:hover,
+.placeholder-card:hover,
+.journal-history-card:hover,
+.music-card:hover,
+.recommend-music:hover,
+.music-search:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(120, 53, 15, 0.25);
+}
+
+/* Mood Buttons */
+
+.mood-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.mood-btn {
+  border: none;
+  padding: 12px 16px;
+  border-radius: 999px;
+  background-color: #fed7aa;
+  color: #7c2d12;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: 0.2s;
+}
+
+.mood-btn:hover {
+  background-color: #fb923c;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.mood-btn.active {
+  background-color: #ea580c;
+  color: white;
+  box-shadow: 0 3px 8px rgba(234, 88, 12, 0.35);
+}
+
+/* Journal Entry */
+
+.journal-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#journal-input {
+  width: 100%;
+  min-height: 140px;
+  padding: 15px;
+  border: 2px solid #fed7aa;
+  border-radius: 14px;
+  resize: vertical;
+  font-size: 1rem;
+  background-color: #fffaf0;
+  color: #3b2f2f;
+}
+
+#journal-input:focus {
+  outline: none;
+  border-color: #fb923c;
+}
+
+#journal-submit-btn,
+#music-search-btn {
+  border: none;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background-color: #f97316;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.2s;
+}
+
+#journal-submit-btn:hover,
+#music-search-btn:hover {
+  background-color: #ea580c;
+}
+
+/* Music Section */
+
+.music h2 {
+  margin-bottom: 18px;
+  color: #b45309;
+  text-align: center;
+}
+
+.recommend-music {
+  background-color: #ffedd5;
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.title {
+  margin-bottom: 8px;
+}
+
+.music-list {
+  margin-top: 15px;
+}
+
+.music-card {
+  min-height: 100px;
+  background-color: #fffaf0;
+  border-radius: 14px;
+  padding: 18px;
+  border-left: 6px solid #f97316;
+}
+
+.music-search {
+  background-color: #fff7ed;
+  padding: 18px;
+  border-radius: 16px;
+}
+
+.music-search h3 {
+  margin-bottom: 12px;
+}
+
+#music-search-input {
+  width: 70%;
+  padding: 12px;
+  border: 2px solid #fed7aa;
+  border-radius: 12px;
+  font-size: 1rem;
+  background-color: #fffaf0;
+}
+
+#music-search-input:focus {
+  outline: none;
+  border-color: #fb923c;
+}
+
+/* Footer */
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: rgba(124, 74, 30, 0.25);
+  width: 90%;
+  margin: 20px auto;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #7c4a1e;
+}
+
+footer a {
+  color: #c2410c;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+
+@media (max-width: 850px) {  .app-layout {
+    flex-direction: column;
+  }
+
+  .past-journal-sidebar {
+    width: 100%;
+    position: static;
+  }
+
+  #music-search-input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #music-search-btn {
+    width: 100%;
+  }
+
+  .history-toggle-btn {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 999px;
+    background-color: #f97316;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .history-toggle-btn:hover {
+    background-color: #ea580c;
+  }
+
+  /* Hide past journal sidebar on mobile by default */
+  .past-journal-sidebar {
+    display: none;
+    width: 100%;
+    position: static;
+}
+}
+
+
+@media (max-width: 500px) {
+  .logo {
+    font-size: 2rem;
+  }
+
+  section,
+  .past-journal-sidebar {
+    padding: 18px;
+  }
+
+  .mood-buttons {
+    flex-direction: column;
+  }
+
+  .mood-btn {
+    width: 100%;
+  }
+}
+
+:root {
+  --purple-dark: #4c1d95;
+  --purple-main: #7c3aed;
+  --purple-light: #a78bfa;
+  --purple-soft: #ede9fe;
+  --purple-bg: #f7f3ff;
+  --text-main: #1f1733;
+  --text-soft: #6b5a8e;
+  --white: #ffffff;
+  --border: #e7ddff;
+  --shadow: 0 16px 40px rgba(76, 29, 149, 0.12);
+}
