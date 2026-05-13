@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoodTune Journal</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="css.css" />
+</head>
+<body>
+
+    
+
+  <header>
+    <h1>MoodTune Journal</h1>
+    <p>Track your mood. Write your thoughts. Find your tune.</p>
+  </header>
+
+  <main>
+    <section class="journal-card">
+      <h2>How are you feeling today?</h2>
+
+      <div class="mood-buttons">
+        <button>😊 Happy</button>
+        <button>😔 Sad</button>
+        <button>😌 Calm</button>
+        <button>😰 Stressed</button>
+        <button>⚡ Energetic</button>
+      </div>
+
+      <label for="journal-entry">Write your journal entry:</label>
+      <textarea id="journal-entry" placeholder="Write about your day..."></textarea>
+
+      <button class="save-btn">Save Entry</button>
+    </section>
+
+    <section class="music-card">
+      <h2>Your MoodTune</h2>
+      <p>Based on your mood, we recommend:</p>
+
+      <div class="song-box">
+        <h3>Song Title</h3>
+        <p>Artist Name</p>
+        <button>Play Preview</button>
+      </div>
+    </section>
+
+    <section class="entries-card">
+      <h2>Past Journal Entries</h2>
+
+      <div class="entry">
+        <h3>😊 Happy</h3>
+        <p class="date">December 2026</p>
+        <p>Today was a good day. I felt productive and relaxed.</p>
+      </div>
+
+      <div class="entry">
+        <h3>😌 Calm</h3>
+        <p class="date">December 2026</p>
+        <p>I spent time listening to music and relaxing.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made by Team MoodTune Journal</p>
+  </footer>
+
+</body>
+</html>
