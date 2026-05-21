@@ -43,3 +43,67 @@ async function fetchSearchMusic() {
         searchResults.appendChild(card)
     }
 }
+
+// music reccomendation list
+
+const musicList = document.querySelector(".music-list")
+
+const journalbtn = document.getElementById("journal-submit-btn")
+
+journalbtn.addEventListener("click", (e) => {
+    e.preventDefault()
+    fetchMoodMusic()
+})
+
+
+const active = document.querySelector("#selected-mood-text")
+
+const emotionMap = {
+    Happy: ["Upbeat", "Easygoing", "Cool", "Romantic"],
+    Calm: ["Peaceful", "Tender", "Sophisticated", "Sensual"],
+    Excited: ["Excited", "Energizing", "Feiry", "Rowdy", "Stirring"],
+    Confident: ["Empowering", "Defiant", "Cool"],
+    Lonely: ["Yearning", "Brooding"],
+    Sad: ["Melancholy", "Sentimental", "Yearning"],
+    Tired: ["Easygoing", "Peaceful"],
+    Anxious: ["Serious", "Brooding", "Gritty"],
+    Angry: ["Aggressive", "Fiery", "Defiant", "Gritty"]
+}
+
+
+
+async function fetchMoodMusic() {
+    musicList.innerHTML = ``
+
+    for (const mood of emotionMap[active.textContent]) {
+        console.log(mood)
+        const response = await fetch(`https://discoveryprovider.audius.co/v1/tracks/search?mood=${mood}`)
+        const data = await response.json()
+
+        console.log(data)
+
+        for (let i = 0; i < 2; i++) {
+            const card = document.createElement("div")
+            card.classList.add("music-card")
+
+            card.innerHTML = `
+           <img src="${data.data[i].artwork?.["150x150"]}" alt="cover art">
+           <h3>${data.data[i]?.title || "Unknown Name"}</h3>
+           <p> <b>Artist:</b> ${data.data[i]?.artists || "Unknown Artist"}</p>
+           <p> <b>Genre:</b> ${data.data[i]?.genre || "Not specified"}</p>
+           <p> <b>Mood:</b> ${data.data[i]?.mood || "None"}</p>
+           <button class="desc"> Description </button>
+         </div>`
+            const descBtn = card.querySelector(".desc")
+            descBtn.addEventListener("click", (e) => {
+                alert(`${data.data[i]?.description || "This creator did not add a description."}`)})
+
+                musicList.appendChild(card)
+            }
+
+        }
+        // 
+
+
+        const response = await fetch(``)
+    }
