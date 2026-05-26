@@ -254,8 +254,12 @@ section:hover,
 }
 
 .music-list {
-  margin-top: 15px;
+  padding: 10px 30px;
+  margin: 20px;
   display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
 }
 
 .music-card {

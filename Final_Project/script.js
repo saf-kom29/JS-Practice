@@ -48,15 +48,14 @@ async function fetchSearchMusic() {
 
 const musicList = document.querySelector(".music-list")
 
-const journalbtn = document.getElementById("journal-submit-btn")
+const submitBtn = document.getElementById("journal-submit-btn")
 
-journalbtn.addEventListener("click", (e) => {
+submitBtn.addEventListener("click", (e) => {
     e.preventDefault()
     fetchMoodMusic()
 })
 
-
-const active = document.querySelector("#selected-mood-text")
+const selectedMoodText = document.querySelector("#selected-mood-text")
 
 const emotionMap = {
     Happy: ["Upbeat", "Easygoing", "Cool", "Romantic"],
@@ -75,7 +74,7 @@ const emotionMap = {
 async function fetchMoodMusic() {
     musicList.innerHTML = ``
 
-    for (const mood of emotionMap[active.textContent]) {
+    for (const mood of emotionMap[selectedMoodText.textContent]) {
         console.log(mood)
         const response = await fetch(`https://discoveryprovider.audius.co/v1/tracks/search?mood=${mood}`)
         const data = await response.json()
@@ -103,7 +102,4 @@ async function fetchMoodMusic() {
 
         }
         // 
-
-
-        const response = await fetch(``)
     }
